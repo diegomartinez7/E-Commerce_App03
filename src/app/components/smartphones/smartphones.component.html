@@ -1,0 +1,13 @@
+<div class="col-9 mt-4 mr-auto ml-auto">
+    <h2 class="text-warning display-4 text-center">Los smartphones novedosos y de actualidad</h2>
+    <div class="row row_producto">
+        <div class="card col-3 m-5" *ngFor="let Producto of ArrayProductos">
+            <img src="{{Producto.img}}" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">{{Producto.model}}</h5>
+                <p class="card-text">{{Producto.description}}</p>
+                <a (click)="Navegar(Producto.id)" class="btn btn-primary btn-block">Ver artículo</a>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,24 @@
+<div class="col-9 mt-4 mr-auto ml-auto">
+    <h2 class="text-warning display-4 text-center">Resultados de la búsqueda "{{strTermino}}"</h2>
+    <div class="row row_producto">
+        <div class="card col-3 m-5" *ngFor="let Producto of ArrayResultados">
+            <div *ngIf="Producto.department=='SmartPhones'">
+                <img src="{{Producto.img}}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{Producto.model}}</h5>
+                    <p class="card-text">{{Producto.description}}</p>
+                    <a (click)="Navegar(Producto.id)" class="btn btn-primary btn-block">Ver artículo</a>
+                </div>
+            </div>
+
+            <div *ngIf="Producto.department!='SmartPhones'">
+                <img src="{{Producto.img}}" class="card-img-top" style="max-height: 60%;" alt="...">
+                <div class="card-body" style="max-height: 100px !important;">
+                    <h5 class="card-title">{{Producto.model}}</h5>
+                    <p class="card-text">{{Producto.description}}</p>
+                    <a (click)="Navegar(Producto.id)" class="btn btn-primary btn-block">Ver artículo</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

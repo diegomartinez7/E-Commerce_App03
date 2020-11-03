@@ -1,0 +1,22 @@
+<div class="col-8 mt-4 mr-auto ml-auto">
+    <h2 class="text-left text-warning">Marca: {{Product['brand']}}<small> - Departamento de {{Product['department']}}</small></h2>
+    <div class="row">
+        <div class="col-6 text-center mt-3">
+            <img src="{{Product['img']}}" style="width: 50%;" alt="">
+            <br>
+            <button [routerLink]="['../../departamentos']" class="btn btn-light mt-2">Regresar</button>
+        </div>
+        <div class="col-6 text-white">
+            <h3>Modelo: {{Product['model']}} - {{Product['rating']}} (rating)</h3>
+            <hr>
+            <p>Descripción: {{Product['description']}}</p>
+            <p class="text-warning">Precio: ${{Product['price']}}</p>
+            <div *ngIf="mesesSinIntereses()">
+                <p>Meses sin intereses: </p>
+                <ul>
+                    <li *ngFor="let mes of Product['meses']">Hasta {{mes}} meses</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
